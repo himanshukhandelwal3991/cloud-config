@@ -1,0 +1,100 @@
+management:
+  health:
+    db:
+      enabled: false
+    diskspace:
+      enabled: false
+
+server:
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain,application/javascript,text/css
+  port: 5000
+
+datastream:
+  logStream: viuapp-acf-log-prod
+
+content:
+  maxAge: 86400
+
+security:
+  apiKey: z8ZqoKl4PtElMazY8SxojXsYGRtpqRtp
+
+common:
+  security:
+      key: 6m9gVgZ84AmBAyzOglfc7NHhqS8xw4oNUDh7ICc9T7TTksivKvcU6XhL8grQVpALPhN3MUECoOAJVq0bwdygDw==
+      authTokenExpirySeconds: 86400
+      playTokenExpirySeconds: 3600
+      iidTokenExpirySeconds: 99999999
+      minTokenExpirySeconds: 3600
+      maxTokenExpirySeconds: 14400
+
+firebase:
+  projectId: viu-test-app
+  serviceAccount: viu-test-app-firebase-adminsdk-service.json
+  baseUrl: https://firebaseremoteconfig.googleapis.com
+  databaseUrl: https://viu-test-app.firebaseio.com/
+  userCollectionName: vusers
+
+awsuser:
+  viuappMicroService:
+    accessKeyId: AKIAIYGWFSSQM3YJAUQQ
+    accessKey: 4LVeH0UYqayfs6k0j1cRuZuVZnCiXLFIfUVbDZGl
+
+sqs:
+  acfQ: https://sqs.ap-southeast-1.amazonaws.com/148016069073/Viuapp-ACF-Dev
+  readInBatch: 10
+  visibilityTimeout: 30
+
+schedulers:
+  initialDelayInMilliseconds: 2000
+  fixedDelayInMilliseconds: 5000
+
+---
+
+spring:
+  profiles: prod
+firebase:
+  projectId: viu-app
+  serviceAccount: viu-app-firebase-adminsdk-b7p5p-9455fbdab4.json
+  baseUrl: https://firebaseremoteconfig.googleapis.com
+  databaseUrl: https://viu-app.firebaseio.com/
+sqs:
+  acfQ: https://sqs.ap-southeast-1.amazonaws.com/148016069073/Viuapp-ACF-Prod
+  readInBatch: 10
+  visibilityTimeout: 3600
+security:
+  apiKey: G3VxBODv5vaOpoM8FnX2zxJ4lUpHyWSD
+
+---
+
+spring:
+  profiles: staging
+firebase:
+  projectId: viu-e2e
+  serviceAccount: viu-e2e-firebase-adminsdk-2g3hf-1f63015b02.json
+  baseUrl: https://firebaseremoteconfig.googleapis.com
+  databaseUrl: https://viu-e2e.firebaseio.com/
+sqs:
+  acfQ: https://sqs.ap-southeast-1.amazonaws.com/148016069073/Viuapp-ACF-Staging
+  readInBatch: 10
+  visibilityTimeout: 3600
+security:
+  apiKey: z8ZqoKl4PtElMazY8SxojXsYGRtpqRtp
+
+---
+
+spring:
+  profiles: dev
+firebase:
+  projectId: viu-test-app
+  serviceAccount: viu-test-app-firebase-adminsdk-service.json
+  baseUrl: https://firebaseremoteconfig.googleapis.com
+  databaseUrl: https://viu-test-app.firebaseio.com/
+sqs:
+  acfQ: https://sqs.ap-southeast-1.amazonaws.com/148016069073/Viuapp-ACF-Dev
+  readInBatch: 10
+  visibilityTimeout: 3600
+security:
+  apiKey: z8ZqoKl4PtElMazY8SxojXsYGRtpqRtp
+

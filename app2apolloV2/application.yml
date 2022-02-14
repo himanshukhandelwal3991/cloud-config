@@ -1,0 +1,59 @@
+envs:
+  production:
+    viuBackendService: http://prod-in.viu.com/
+    userIdentityService: https://um.viuapi.io/
+    searchService: http://prod-in.viu.com/api/search/
+    recommendationService: http://viu-content-recommendations-prod.ap-southeast-1.elasticbeanstalk.com/viu_recommendations/
+    clipService: http://prod-in.viu.com/api/clip/
+    clipFallbackService: https://s3-ap-southeast-1.amazonaws.com/ctool.xmls.vuclip.com/clip/success/
+    homepageService: http://homepage.viuing.io/homepage/
+    drmService: http://drm-prod.viuing.io/video/v1/
+    newDrmService: https://apis.viu.com/drmservice-content/drm/v1/content/
+    bffService: https://um.viuapi.io/viuapp-bff/
+    continueWatchService: http://35.229.102.231:8080/
+    userInviteService: https://userinvite.viuapi.io/
+    rewardPointConsumerService: https://rewardpointconsumer.viuapi.io/
+    rewardPointService: https://rewardpoint.viuapi.io/
+    offerDetailService: https://s3-ap-southeast-1.amazonaws.com/viuprod.vuclip.com/offers/
+    inviteDetailService: https://s3-ap-southeast-1.amazonaws.com/viuembed.vuclip.com/templates/invite/
+    drmAuth10000Days: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBVVRIIiwiY2xpZW50SWQiOiJhcG9sbG8iLCJpaWQiOiI1OTk1MmYwMC1lMjk1LTRhMTEtODZmMS1lODNlNmY1YTRjODciLCJpaWRUb2tlbiI6ImV5SmhiR2NpT2lKSVV6VXhNaUo5LmV5SnpkV0lpT2lKSlNVUWlMQ0pwYVdRaU9pSTFPVGsxTW1Zd01DMWxNamsxTFRSaE1URXRPRFptTVMxbE9ETmxObVkxWVRSak9EY2lMQ0psZUhBaU9qRTJPRGc0TVRZMk5UQjkuRlNnbkhWczI0b0ZrTm1zM2tna3RnYmtfd0VLWTNiZTJReC1UQnV0ZHdlNjJPUmE3djlmZ0xLZ0V1cVZYUXdCMk1ZaFdRWGtLc1EzT3h6LU1nWHZMRkEiLCJzaXRlSWQiOiJ2aXUyIiwic2xvdElkIjoiYXBvbGxvIiwiZXhwIjoxOTA1MDQwNjUxfQ.hc0vL7yHyVg5jxA04NqRDilUhPuH77CHCHHAhRivQGCM6KANedahhFaP1pJ7_nCeLN2zh80bxzIpeSUm-CRwfw
+    xClientAuth: b6fea2dd3d110b12fbd23d7ab8cd0ba3
+  staging:
+    viuBackendService: http://viu-e2e-e3.stg-viuapi.io/
+    userIdentityService: http://umpoc-istioeast.vuclip.com/
+    searchService: http://viu-e2e-e3.stg-viuapi.io/api/search/
+    recommendationService: http://viu-content-recommendations-prod.ap-southeast-1.elasticbeanstalk.com/viu_recommendations/
+    clipService: http://viu-e2e-e3.stg-viuapi.io/api/clip/
+    clipFallbackService: https://s3-ap-southeast-1.amazonaws.com/ctool.xmls.vuclip.com/clip/success/
+    homepageService: http://homepage-staging.viuing.io/homepage/
+    drmService: http://drm-staging.viuing.io/video/v1/
+    newDrmService: https://apigee.viuapi.io/drmservice-content/drm/v1/content/
+    bffService: https://um.viuapi.io/viuapp-bff/
+    continueWatchService: http://35.229.102.231:8080/
+    userInviteService: https://userinvite.dev-viuapi.io/
+    rewardPointConsumerService: https://rewardpointconsumer.dev-viuapi.io/
+    rewardPointService: https://rewardpoint.dev-viuapi.io/
+    offerDetailService: https://s3-ap-southeast-1.amazonaws.com/viuprod.vuclip.com/offers/
+    inviteDetailService: https://s3-ap-southeast-1.amazonaws.com/viuembed.vuclip.com/templates/invite/
+    drmAuth10000Days: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBVVRIIiwiY2xpZW50SWQiOiJhcG9sbG8iLCJpaWQiOiI1OTk1MmYwMC1lMjk1LTRhMTEtODZmMS1lODNlNmY1YTRjODciLCJpaWRUb2tlbiI6ImV5SmhiR2NpT2lKSVV6VXhNaUo5LmV5SnpkV0lpT2lKSlNVUWlMQ0pwYVdRaU9pSTFPVGsxTW1Zd01DMWxNamsxTFRSaE1URXRPRFptTVMxbE9ETmxObVkxWVRSak9EY2lMQ0psZUhBaU9qRTJPRGc0TVRZMk5UQjkuRlNnbkhWczI0b0ZrTm1zM2tna3RnYmtfd0VLWTNiZTJReC1UQnV0ZHdlNjJPUmE3djlmZ0xLZ0V1cVZYUXdCMk1ZaFdRWGtLc1EzT3h6LU1nWHZMRkEiLCJzaXRlSWQiOiJ2aXUyIiwic2xvdElkIjoiYXBvbGxvIiwiZXhwIjoxOTA1MDQwNjUxfQ.hc0vL7yHyVg5jxA04NqRDilUhPuH77CHCHHAhRivQGCM6KANedahhFaP1pJ7_nCeLN2zh80bxzIpeSUm-CRwfw
+    xClientAuth: b6fea2dd3d110b12fbd23d7ab8cd0ba3
+  local:
+    viuBackendService: http://viu-e2e-e3.stg-viuapi.io/
+    userIdentityService: http://umpoc-istioeast.vuclip.com/
+    searchService: http://viu-e2e-e3.stg-viuapi.io/api/search/
+    recommendationService: http://viu-content-recommendations-prod.ap-southeast-1.elasticbeanstalk.com/viu_recommendations/
+    clipService: http://viu-e2e-e3.stg-viuapi.io/api/clip/
+    clipFallbackService: https://s3-ap-southeast-1.amazonaws.com/ctool.xmls.vuclip.com/clip/success/
+    homepageService: http://homepage-staging.viuing.io/homepage/
+    drmService: http://drm-staging.viuing.io/video/v1/
+    newDrmService: https://apigee.viuapi.io/drmservice-content/drm/v1/content/
+    bffService: https://um.viuapi.io/viuapp-bff/
+    continueWatchService: http://35.229.102.231:8080/
+    userInviteService: https://userinvite.dev-viuapi.io/
+    rewardPointConsumerService: https://rewardpointconsumer.dev-viuapi.io/
+    rewardPointService: https://rewardpoint.dev-viuapi.io/
+    offerDetailService: https://s3-ap-southeast-1.amazonaws.com/viuprod.vuclip.com/offers/
+    inviteDetailService: https://s3-ap-southeast-1.amazonaws.com/viuembed.vuclip.com/templates/invite/
+    drmAuth10000Days: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBVVRIIiwiY2xpZW50SWQiOiJhcG9sbG8iLCJpaWQiOiI1OTk1MmYwMC1lMjk1LTRhMTEtODZmMS1lODNlNmY1YTRjODciLCJpaWRUb2tlbiI6ImV5SmhiR2NpT2lKSVV6VXhNaUo5LmV5SnpkV0lpT2lKSlNVUWlMQ0pwYVdRaU9pSTFPVGsxTW1Zd01DMWxNamsxTFRSaE1URXRPRFptTVMxbE9ETmxObVkxWVRSak9EY2lMQ0psZUhBaU9qRTJPRGc0TVRZMk5UQjkuRlNnbkhWczI0b0ZrTm1zM2tna3RnYmtfd0VLWTNiZTJReC1UQnV0ZHdlNjJPUmE3djlmZ0xLZ0V1cVZYUXdCMk1ZaFdRWGtLc1EzT3h6LU1nWHZMRkEiLCJzaXRlSWQiOiJ2aXUyIiwic2xvdElkIjoiYXBvbGxvIiwiZXhwIjoxOTA1MDQwNjUxfQ.hc0vL7yHyVg5jxA04NqRDilUhPuH77CHCHHAhRivQGCM6KANedahhFaP1pJ7_nCeLN2zh80bxzIpeSUm-CRwfw
+    xClientAuth: b6fea2dd3d110b12fbd23d7ab8cd0ba3
+

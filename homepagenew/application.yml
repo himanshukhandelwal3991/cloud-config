@@ -1,0 +1,174 @@
+um:
+  auth:
+    url: ${UM_HOST:https://umpoc-istioeast.vuclip.com/}
+  token:
+    key: '"WdnkuH3T40UfeY"'
+hystrix:
+  command:
+    default:
+      circuitBreaker:
+        errorThresholdPercentage: 50
+        timeoutInMilliseconds: 2000
+    execution:
+      isolation:
+        strategy: SEMAPHORE
+
+spring:
+  cloud:
+    consul:
+      host: 172.31.15.85
+      discovery:
+        service-name: homepage-production
+        tags: service=homepage_production_service
+        prefer-ip-address: true
+        instance-id: ${spring.application.name}:${spring.cloud.client.hostname}
+      enabled: false
+  mvc:
+    throw-exception-if-no-handler-found: true
+  task:
+    pool:
+      corePoolSize: 100
+      maxPoolSize: 1000
+      keepAliveSeconds: 300
+      queueCapacity: 1000
+
+server:
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain,application/javascript,text/css
+  port: 8080
+
+datastream:
+  eventStream: embed-events-staging
+  logStream: viuapp-homepage-log-staging
+
+awsuser:
+  viuappMicroService:
+    accessKeyId: AKIAIYGWFSSQM3YJAUQQ
+    accessKey: 4LVeH0UYqayfs6k0j1cRuZuVZnCiXLFIfUVbDZGl
+
+pagination:
+  pageSize: 6
+
+youtube:
+  block: false
+  ios_maxversion: 1.43
+  android_maxversion: 1.0.82
+
+moments_filter:
+  path: $..item[*]
+  attributes: thumbnails,title,cue_points
+  format: json,xml
+
+s3_filter:
+  path: /page/body/category/container
+  attributes: tver
+  format: xml
+
+
+recommendation:
+  relatedApi:
+    enabled: false
+    percentThreshold: 1
+    recommendNumber: 1
+    countries:
+      # - country code(IN/all), usertype(newuser/repeat/all), user-segments(1|20|all), position
+      - MY, repeat, 3|4|5|6|7|8|9|10|11|12, 13
+      - IN, all, 19, 3
+      - ZA, all, 19, 3
+      - MM, all, 19, 3
+      - ID, all, 5, 3
+  trendingApi:
+    enabled: false
+    countries:
+      # - country code(IN/all), usertype(newuser/repeat/all), user-segments(1|20|all), position
+      - MY, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 14
+      - ID, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 4
+      - IN, all, all, 3
+      - ZA, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 2
+      - MM, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 15
+      - EG, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 5
+      - SA, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 5
+      - AE, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 5
+      - OM, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 5
+      - KW, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 5
+      - QA, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 5
+      - BH, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 5
+      - IQ, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 5
+      - JO, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 5
+  autoMLApi:
+    enabled: false
+    countries:
+      # - country code(IN/all), usertype(newuser/repeat/all), user-segments(1|20|all), position
+      - MY, all, 0, 13
+      - IN, all, all, 4
+      - MM, all, 0, 4
+  personalRecommendation:
+    enabled: false
+    countries:
+      # - country code(IN/all), usertype(newuser/repeat/all), user-segments(1|20|all), position
+      - IN, all, all, 5
+  colloborativefilterApi:
+    enabled: false
+    countries:
+      # - country code(IN/all), usertype(newuser/repeat/all), user-segments(1|20|all), position
+      - MY, all, 2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20, 13
+      - MM, all, 2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 4
+      - IN, all, all, 6
+      - ID, all, 2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 5
+      - EG, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 1
+      - SA, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 1
+      - AE, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 1
+      - OM, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 1
+      - KW, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 1
+      - QA, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 1
+      - BH, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 1
+      - IQ, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 1
+      - JO, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 1
+      - ZA, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 3
+  becauseYouWatchedFilterApi:
+    enabled: false
+    enablePercentCompletion: true
+    countries:
+      # - country code(IN/all), usertype(newuser/repeat/all), user-segments(1|20|all), position
+      - MY, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 19
+      - ID, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 7
+      - IN, all, all, 7
+      - MM, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 8
+      - KW, all, 15|16|17|18|19, 9
+      - EG, all, 15|16|17|18|19, 9
+      - SA, all, 15|16|17|18|19, 9
+      - AE, all, 15|16|17|18|19, 9
+      - OM, all, 15|16|17|18|19, 9
+      - QA, all, 15|16|17|18|19, 9
+      - BH, all, 15|16|17|18|19, 9
+      - IQ, all, 15|16|17|18|19, 9
+      - JO, all, 15|16|17|18|19, 9
+      - ZA, all, 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19, 4
+  moments:
+    enabled: false
+    countries:
+    #  - country code(IN/all), usertype(newuser/repeat/all), user-segments(1|20|all), position
+      - MY, all, 0|14|15|16|17, 8
+      - ID, all, all, 5
+      - ZA, all, 0|1|2|3|4|5|6|7|8|9|10|11, 5
+      - IN, all, all, 8
+shuffleApi: ${SHUFFLE_API:http://viu-personization.vuclip.com/reordering/api/rows?platform={0}&contentFlavour={1}&appVer={2}&cCode={3}&geo={4}&userContentPreference={5}&userId={6}&userSegment={7}&appLang={8}}
+shuffleproperties:
+  shuffleConfig:
+      # country , shuffleEnabled , restrcited rows , user_segment
+    - IN,false,0,3|5|15|16
+    - ID,true,0,3|5|15
+    - MY,true,0,0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19
+    - AE,true,0,0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19
+    - MM,false,0,0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19
+recommendNew:
+  related: https://prod-in.viu.com/api/search/related?carrierid=0&id={0}&appid={1}&appver={2}&ccode={3}&compressed=true&countryCode={4}&devicecountry={5}&devicetimezone=%2B0700&geo={6}&iid={7}&languageid={8}&platform=app&regionid=all&userid={9}&ver=1.0&vuserid={10}
+  trending: ${TRENDING_API:https://run.mocky.io/v3/22b4e647-a0aa-46a2-b12d-fbae746e7a02}
+  recommendationautoml: ${AUTOML_API:https://run.mocky.io/v3/8dab70d5-f783-4af1-821a-d9d0c27c40a0}
+  recommendationcollaborativefilterapi: ${COLLAB_API:https://run.mocky.io/v3/3b64a4ae-58de-409d-bfd2-585a279ca78e}
+  becauseyouwatchedapi: ${BYW_API:https://run.mocky.io/v3/d418d538-0a7d-40a9-87c7-6eb9d1582681}
+  #momentsCollaborativeFilterApi: http://a5e9bc4d510db11eaa1930e6696c760c-447682078.us-east-1.elb.amazonaws.com/api/content/v1/ql
+  momentsCollaborativeFilterApi: ${MOMENTS_API:http://a5e9bc4d510db11eaa1930e6696c760c-447682078.us-east-1.elb.amazonaws.com/api/content/v1/ql}
+  recommendationPersonalApi:  ${PERSON_API:https://run.mocky.io/v3/d418d538-0a7d-40a9-87c7-6eb9d1582681}
+platformExcludedFromRecommendation: viu_androidtv,viu_test
